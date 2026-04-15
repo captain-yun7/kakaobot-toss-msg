@@ -9,7 +9,7 @@
  */
 
 var targetRoom = null;
-var KEYWORD = "Dessert";
+var KEYWORD = "디.저.트";
 var lastMsg = "";
 var lastTime = 0;
 var COOLDOWN = 3000;
@@ -44,7 +44,7 @@ bot.addListener(Event.MESSAGE, function(msg) {
         && msg.room !== targetRoom
         && msg.content.indexOf(KEYWORD) !== -1) {
         Log.d("[Dessert봇] 키워드 매칭 → 전달 시도 (" + targetRoom + ")");
-        msg.reply(targetRoom, msg.content);
+        bot.send(targetRoom, msg.content);
         lastMsg = msg.content;
         lastTime = now;
         Log.d("[Dessert봇] 전달 완료");
